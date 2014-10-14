@@ -70,3 +70,8 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 = 0.3 =
 * Fixed - Fixed an issue where some themes would not render the parallax background image (such as the default themes).
 * Added - Screenshots on Wordpress plugins directory.
+
+== Upgrade Notice ==
+
+= 0.3 =
+Fixed issue where parallax background image would not display on some themes.
