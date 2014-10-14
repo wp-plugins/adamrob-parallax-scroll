@@ -5,7 +5,11 @@
 ** CSS Styles
 ********************************/
 
+/* V0.3 - Certain themes behave differently regarding ordering.
+Set the z-index to 1 to help prevent issues with layouts */
 .parallax-window {
+	position: relative;
+	z-index: 1;
     min-height: 100px;
     background: transparent;
 }

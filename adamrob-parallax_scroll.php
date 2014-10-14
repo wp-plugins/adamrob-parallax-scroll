@@ -1,7 +1,7 @@
 <?php
 /**
 * Plugin Name: Parallax Scroll by Adamrob.co.uk
-* Plugin URI: http://www.adamrob.co.uk
+* Plugin URI: http://www.adamrob.co.uk/parallax-scroll
 * Description: Easily create a page header or even a post with a parallax scrolling background image, with just a shortcode! Visit adamrob.co.uk for more information and support.
 * Version: 0.2
 * Author: adamrob
@@ -40,6 +40,10 @@
 **
 ** For Help and Support please visit www.adamrob.co.uk
 **
+** V0.3 - 14OCT20124 - Fixed ZIndex bug present when plugin
+**                      used on certain themes.
+**                  - Enclosed external script calls.
+**
 ** Main Plugin Call
 ********************************/
 
@@ -54,8 +58,11 @@ define('PARALLAX_SHORTCODE', "parallax-scroll");
 
 
 //Include external Scripts
-wp_register_style( 'parallax-CSS', plugins_url( '/css/parallax.css', __FILE__ ) );
-wp_register_script( 'parallax-script', plugins_url( '/includes/parallax/parallax.js', __FILE__ ) );
+function adamrob_parallax_scroll_scripts(){
+    wp_register_style( 'parallax-CSS', plugins_url( '/css/parallax.css', __FILE__ ) );
+    wp_register_script( 'parallax-script', plugins_url( '/includes/parallax/parallax.js', __FILE__ ), array('jquery') );
+}
+add_action('wp_enqueue_scripts', 'adamrob_parallax_scroll_scripts');
 
 //Include external files
 require(PARALLAX_PATH . 'includes/adamrob-parralax-post-ops.php');

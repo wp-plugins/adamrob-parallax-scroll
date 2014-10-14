@@ -3,7 +3,7 @@ Contributors: adamrob
 Tags: parallax, scroll, image, header, adamrob
 Requires at least: 4.0
 Tested up to: 4.0
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,13 @@ Manual Install:
 Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") for support and/or suggestions.
 
 
+== Screenshots ==
+
+1. The options availble on the Parallax Scroll post page.
+2. An example of parallax scroll being used for header text.
+3. An example of parallax scroll being used as part of the page, in this instance it contains text and a google maps element.
+
+
 == Changelog ==
 
 = 0.1 =
@@ -59,3 +66,7 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 
 = 0.2 =
 * Added header CSS style parameter to custom post type.
+
+= 0.3 =
+* Fixed - Fixed an issue where some themes would not render the parallax background image (such as the default themes).
+* Added - Screenshots on Wordpress plugins directory.
