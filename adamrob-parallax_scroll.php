@@ -3,7 +3,7 @@
 * Plugin Name: Parallax Scroll by Adamrob.co.uk
 * Plugin URI: http://www.adamrob.co.uk/parallax-scroll
 * Description: Easily create a page header or even a post with a parallax scrolling background image, with just a shortcode! Visit adamrob.co.uk for more information and support.
-* Version: 0.2
+* Version: 0.3
 * Author: adamrob
 * Author URI: http://www.adamrob.co.uk
 * License: A "Slug" license name e.g. GPL12
