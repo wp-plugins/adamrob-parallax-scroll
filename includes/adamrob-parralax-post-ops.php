@@ -10,6 +10,7 @@
 ********************************/
 /*
     V0.2 - 7OCT2014 - Added Header Style Parameter
+    V0.4 - 31OCT2014 - Added 2 Mobile Turn Off Parameters. Added full width option
 */
 
 
@@ -80,6 +81,24 @@
             'desc'  => 'Enter the inline CSS style required for the header eg. font-weight: bold; font-size: large;',
             'id'    => $prefix.'hstyle',
             'type'  => 'textarea'
+        ),
+        array(
+            'label'=> 'Full Width',
+            'desc'  => 'Display the parallax across the full width of the page. Useful for full width websites where the content area is less than full width.',
+            'id'    => $prefix.'FullWidth',
+            'type'  => 'checkbox'
+        ),
+        array(
+            'label'=> 'Disable Parallax Image On Mobile Devices',
+            'desc'  => 'Parallax Scroll will only render the background image on mobile devices with no parallax animation. Select this option if you would rather the background image not display at all on mobile devices.',
+            'id'    => $prefix.'DisableParImg',
+            'type'  => 'checkbox'
+        ),
+        array(
+            'label'=> 'Disable Entire Parallax On Mobile Devices',
+            'desc'  => 'Parallax Scroll will only render the background image on mobile devices with no parallax animation. Select this option if you would rather not display any of the parallax content when on mobile device.',
+            'id'    => $prefix.'DisableParallax',
+            'type'  => 'checkbox'
         )
     );
 

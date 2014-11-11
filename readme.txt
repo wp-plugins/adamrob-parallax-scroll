@@ -3,7 +3,7 @@ Contributors: adamrob
 Tags: parallax, scroll, image, header, adamrob
 Requires at least: 4.0
 Tested up to: 4.0
-Stable tag: 0.3
+Stable tag: 0.4
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,7 +71,16 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 * Fixed - Fixed an issue where some themes would not render the parallax background image (such as the default themes).
 * Added - Screenshots on Wordpress plugins directory.
 
+= 0.4 =
+* Added - Two new options to add the ability of disabling parallax scroll image or content when on mobile device.
+* Added - Full width option. This option will over-ride the themes content area style and make the parallax full width.
+* Fixed - Shortcodes in the parallax scroll post content now work correctly.
+
+
 == Upgrade Notice ==
 
 = 0.3 =
 Fixed issue where parallax background image would not display on some themes.
+
+= 0.4 =
+New options added including full width. Shortcodes now work in the post content.

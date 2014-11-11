@@ -123,12 +123,10 @@
     this.$mirror = $('<div />').prependTo('body');
     this.$slider = $('<img />').prependTo(this.$mirror);
 
-    //*--14 OCT 2014 - adamrob.co.uk - V0.3
-    //* Hardcoded the zindex to help prevent issues with theme layouts
+
     this.$mirror.addClass('parallax-mirror').css({
       visibility: 'hidden',
-      //zIndex: this.zIndex,
-      zIndex: 1,
+      zIndex: this.zIndex,
       position: 'fixed',
       top: 0,
       left: 0,
