@@ -11,6 +11,7 @@
 /*
     V0.2 - 7OCT2014 - Added Header Style Parameter
     V0.4 - 31OCT2014 - Added disable on mobile parameters. Added full width option
+    V1.0 - 13JAN2015 - Removed parallax.js and now using pure CSS
 */
 
 /***
@@ -92,6 +93,9 @@ function register_sc_parallax_scroll( $atts ) {
                 $hpos=PARALLAX_DEFHPOS;
             }
 
+            //Get parallaz image size
+            $psize = absint(get_post_meta(get_the_id(), 'parallax_meta_pheight', true));
+
             //Get parallax disable options
             $disableParImg=esc_attr(get_post_meta(get_the_id(), 'parallax_meta_DisableParImg', true));
             $disablePar=esc_attr(get_post_meta(get_the_id(), 'parallax_meta_DisableParallax', true));
@@ -116,56 +120,71 @@ function register_sc_parallax_scroll( $atts ) {
                 return;
             }
 
+            //*Create IDs for parralax and container divs
+            $parallaxID='parallax_'.$postid;
+            $containerID='parallax_container_'.$postid;
 
             //**
             //INCLUDE EXTERNAL SCRIPTS
             wp_enqueue_style('parallax-CSS');
 
-            if (!$disableParImg || wp_is_mobile()===FALSE){
-                //Only include scripts when not on a mobile.
-                //or on a mobile and user wants it
-                wp_enqueue_script( 'parallax-script' );
-            }
-
-            //**Full width options
-            $parallaxclass="parallax-window";
             //Check if full width is enabled
             if ($fullWidthEnable){
             	//include full width java script
             	wp_enqueue_script( 'parallax-script-fullwidth' );
-            	//include the full width class
-            	$parallaxclass = $parallaxclass . " parallax-window-fullwidth";
+
+                //Send parameters to script
+                wp_localize_script('parallax-script-fullwidth', 'parallax_script_options', array(
+                    'parallaxdivid' => $parallaxID,
+                    'parallaxcontainerid' => $containerID
+                ));
         	}
 
-            //**
-            //BUILD THE HTML
 
             //Build the style tag for the parallax container
             $parallaxStyle='';
             if ($pheight!==PARALLAX_MINHEIGHT){
                 //Use user defined height
-                $parallaxStyle='style="height:'.$pheight.'px;"';
+                $parallaxStyle='height:'.$pheight.'px;';
             }elseif($pheight!==PARALLAX_MINHEIGHT && $theContent ==""){
                 //Define the minimum height if no post content.
                 //If there is post content, use min height from css
-                $parallaxStyle='style="height:'.PARALLAX_MINHEIGHT.'px;"';
+                $parallaxStyle='height:'.PARALLAX_MINHEIGHT.'px;';
             }
 
+            //Enable parallax image?
+            $ParallaxImgStyle='';
+            if (!$disableParImg || wp_is_mobile()===FALSE){
+                //Only show parallax if not on mobile.
+                //or on a mobile and user wants it
+                $ParallaxImgStyle='background-image: url('.$thumb_url.');';
+            }
 
-            //Give the entire plugin a container
-            //Enables us to pad out when in full screen mode
-            $output = '<div class="parallax-window-container">';
+            //build style tag for background size
+            $ParallaxSizeStyle='background-size: cover;';
+            if ($psize>0){
+                //Only show parallax if not on mobile.
+                //or on a mobile and user wants it
+                $ParallaxSizeStyle='background-size: '.$psize.'px;';
+            }
+
+            //Give the entire plugin a container if we are full width
+            if ($fullWidthEnable){
+                //Enables us to pad out when in full screen mode
+                $output = '<div id="'.$containerID.'" class="parallax-window-container">';
+            };
             
             //Build the parallax container
-            $output = $output . '<div class="'.$parallaxclass.'" '.$parallaxStyle.' data-parallax="scroll" data-image-src="'. $thumb_url .'" data-z-Index="1" data-ios-fix="true" data-android-fix="true">';
+            $output .= '<section id="'.$parallaxID.'" class="adamrob_pmodule adamrob_parallax parallax-1" style="'.$parallaxStyle.$ParallaxImgStyle.$ParallaxSizeStyle.'">';
+            $output .= '<div class="adamrob_pcontainer" style="'.$parallaxStyle.'">';
 
             //Build the content if applicable
-            if ($theContent ==""){
+            if ($theContent==""){
                 //Build the title
-                $output = $output . '<table style="width:100%; height:100%;"><tr>';
-                $output = $output . '<td class="parallax-header" style="text-align:'.$hpos.'; vertical-align:'.$vpos.'; padding:'.$padding.'px;">';
-                $output = $output . '<div style="'.$hStyle.'">' . get_the_title() . '</div>';
-                $output = $output . '</td></tr></table>';
+                $output .= '<table style="width:100%; height:100%; border-style:none; margin:0;"><tr>';
+                $output .= '<td class="parallax-header" style="text-align:'.$hpos.'; vertical-align:'.$vpos.'; padding:'.$padding.'px; border-style:none;">';
+                $output .= '<div style="'.$hStyle.'">' . get_the_title() . '</div>';
+                $output .= '</td></tr></table>';
 
             }else{
                 //Build the title
@@ -179,8 +198,13 @@ function register_sc_parallax_scroll( $atts ) {
                 $output = $output . '</div>';
             }
 
-            //Close the parallax and content container
-            $output = $output . '</div></div>';
+            //If we are full width close the container
+            if ($fullWidthEnable){
+                $output .= '</div>';
+            }
+
+            $output .= '</div>';
+            $output .= '</section>';
 
         }
         //Reset query data

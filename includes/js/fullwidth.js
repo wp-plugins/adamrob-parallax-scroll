@@ -1,5 +1,5 @@
 /********************************
-** adamrob.co.uk - 11NOV2014
+** adamrob.co.uk - 9JAN2014
 ** Parallax Scroll Wordpress Plugin
 **
 ** For Help and Support please visit www.adamrob.co.uk
@@ -11,8 +11,17 @@
 ********************************/
 
 jQuery(document).ready(function($){
+
+	//retrieve variables
+	var parallaxoptions = parallax_script_options;
 	
-	$('.parallax-window-container').css("height", $('.parallax-window').css("height") );
+	//Alter height of parallax container
+	$('#'+parallaxoptions.parallaxcontainerid).css("height", $('#'+parallaxoptions.parallaxdivid).css("height") );
+
+	//Alter the CSS properties of the parallax
+	$('#'+parallaxoptions.parallaxdivid).css("position", 'absolute' );
+	$('#'+parallaxoptions.parallaxdivid).css("left", '0' );
+	$('#'+parallaxoptions.parallaxdivid).css("width", '100%' );
 	
 	
 });

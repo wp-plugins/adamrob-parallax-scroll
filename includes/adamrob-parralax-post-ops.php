@@ -11,6 +11,7 @@
 /*
     V0.2 - 7OCT2014 - Added Header Style Parameter
     V0.4 - 31OCT2014 - Added 2 Mobile Turn Off Parameters. Added full width option
+    V1.0 - 13JAN2015 - Added parallax image size option
 */
 
 
@@ -36,6 +37,12 @@
             'id'    => $prefix.'height',
             'type'  => 'number'
         ),
+        /*array(
+            'label'=> 'Parallax Image Size',
+            'desc'  => 'The parallax image size will be scaled based on this value. Specify the width in pixels. Set to 0 to auto set the size of the image (recommended)',
+            'id'    => $prefix.'pheight',
+            'type'  => 'number'
+        ),*/
         array(
             'label'=> 'Horizontal Position',
             'desc'  => 'The horizontal position of the header on the parallax background.',
@@ -84,7 +91,7 @@
         ),
         array(
             'label'=> 'Full Width',
-            'desc'  => 'Display the parallax across the full width of the page. Useful for full width websites where the content area is less than full width.',
+            'desc'  => 'Display the parallax across the full width of the page. This is a work around to get a full width parallax if its not already. This may not work on some themes.',
             'id'    => $prefix.'FullWidth',
             'type'  => 'checkbox'
         ),
@@ -116,6 +123,7 @@
         echo '<p style="text-align:center;">';
         echo '<strong>Parallax Scroll by adamrob.co.uk</strong>';
         echo '<br/>Parallax scroll wil use the information in this post to build a parallax element on your site. This element can then be used in any page/post on your site by using a shortcode.';
+        echo '<br/>Please note, the parallax is always full width. It will be full width of the content area of your theme. If your theme is not full width, you can try and use the full width option below. This may or may not achieve full width for your theme.';
         echo '</p>';
         echo '<br/><br/>To use Parallax Scroll simply follow these steps:';
         echo '<ol type="1"><li>Enter a post title. This will be the main title displayed over the parallax background.</li>';

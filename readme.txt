@@ -2,8 +2,8 @@
 Contributors: adamrob
 Tags: parallax, scroll, image, header, adamrob
 Requires at least: 4.0
-Tested up to: 4.0
-Stable tag: 0.4
+Tested up to: 4.1
+Stable tag: 1.0
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,9 @@ How?
 * The Parallax Scroll admin page will display the shortcode required for all Parallax Scroll post types defined. Copy this shortcode, and paste it into any page or post.
 * Thats it!
 
-Parallax Scroll uses parallax.js for the parallax effect. For more information please see source files.
+Please note the parallax will size automatically to the width of your themes content area. If your theme's content area is not full width, then the parallax will not be full width. This is an issue with your theme and not the plugin.
+As a work around, I have added a full width option that will ignore the content area of your theme and resize to your themes post section. Again this may not work if your themes post section is not full width.
+If the plugin does not work as you would have hoped; please contact me and I can advise further.
 
 == Installation ==
 
@@ -76,6 +78,9 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 * Added - Full width option. This option will over-ride the themes content area style and make the parallax full width.
 * Fixed - Shortcodes in the parallax scroll post content now work correctly.
 
+= 1.0 =
+* Updated - Parallax.js has now been removed. The parallax is now driven from CSS. This will improve browser compatability, in particular with internet explorer.
+
 
 == Upgrade Notice ==
 
@@ -84,3 +89,7 @@ Fixed issue where parallax background image would not display on some themes.
 
 = 0.4 =
 New options added including full width. Shortcodes now work in the post content.
+
+= 1.0 =
+Parallax.js has now been removed. The parallax is now driven from CSS. This will improve browser compatability, in particular with internet explorer.
+PLEASE NOTE: Make a backup of parallax scroll plugin before upgrading. The plugin has been fundamentally changed by changing how the parallax works. This may mean that the new version does not appear as it use to.
