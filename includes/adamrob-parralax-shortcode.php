@@ -12,6 +12,7 @@
     V0.2 - 7OCT2014 - Added Header Style Parameter
     V0.4 - 31OCT2014 - Added disable on mobile parameters. Added full width option
     V1.0 - 13JAN2015 - Removed parallax.js and now using pure CSS
+    v1.1 - 20JAN2015 - Fixed full width issue where more than one parallax used on one post
 */
 
 /***
@@ -121,8 +122,8 @@ function register_sc_parallax_scroll( $atts ) {
             }
 
             //*Create IDs for parralax and container divs
-            $parallaxID='parallax_'.$postid;
-            $containerID='parallax_container_'.$postid;
+            $parallaxFWStyleClass='';//_'.$postid;
+            $containerFWStyleClass='';//_'.$postid;
 
             //**
             //INCLUDE EXTERNAL SCRIPTS
@@ -133,11 +134,16 @@ function register_sc_parallax_scroll( $atts ) {
             	//include full width java script
             	wp_enqueue_script( 'parallax-script-fullwidth' );
 
+            	//Rename IDs
+            	$parallaxFWStyleClass='adamrob_parallax_fullwidth';
+            	$containerFWStyleClass='adamrob_parallax_container_fullwidth';
+
                 //Send parameters to script
                 wp_localize_script('parallax-script-fullwidth', 'parallax_script_options', array(
-                    'parallaxdivid' => $parallaxID,
-                    'parallaxcontainerid' => $containerID
+                    'parallaxdivid' => $parallaxFWStyleClass,
+                    'parallaxcontainerid' => $containerFWStyleClass
                 ));
+
         	}
 
 
@@ -171,11 +177,11 @@ function register_sc_parallax_scroll( $atts ) {
             //Give the entire plugin a container if we are full width
             if ($fullWidthEnable){
                 //Enables us to pad out when in full screen mode
-                $output = '<div id="'.$containerID.'" class="parallax-window-container">';
+                $output = '<div id="parallax_container'.$postid.'" class="parallax-window-container '.$containerFWStyleClass.'">';
             };
             
             //Build the parallax container
-            $output .= '<section id="'.$parallaxID.'" class="adamrob_pmodule adamrob_parallax parallax-1" style="'.$parallaxStyle.$ParallaxImgStyle.$ParallaxSizeStyle.'">';
+            $output .= '<section id="parallax_'.$postid.'" class="adamrob_pmodule adamrob_parallax parallax-1 '.$parallaxFWStyleClass.'" style="'.$parallaxStyle.$ParallaxImgStyle.$ParallaxSizeStyle.'">';
             $output .= '<div class="adamrob_pcontainer" style="'.$parallaxStyle.'">';
 
             //Build the content if applicable

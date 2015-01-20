@@ -1,5 +1,5 @@
 /********************************
-** adamrob.co.uk - 8JAN2015
+** adamrob.co.uk - 20JAN2015
 ** Parallax Scroll Wordpress Plugin
 **
 ** CSS Styles
@@ -58,4 +58,14 @@ section.adamrob_pmodule.parallax-1 {
     	font-size: 50px;
   	}
 	*/
+}
+
+/* ============================================================
+  FULL WIDTH CLASS
+============================================================ */
+.adamrob_parallax_fullwidth{
+  /*Used when in full screen mode */
+  position: absolute;
+  left: 0;
+  width: 100%;
 }
