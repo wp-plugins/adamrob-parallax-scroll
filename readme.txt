@@ -32,8 +32,8 @@ If the plugin does not work as you would have hoped; please contact me and I can
 ** NEW **
 You can now use parallax scroll in your themes, using PHP. Using this method, there is no need to add a shortcode to a page or post; just simply past the following PHP code into your PHP page where you would like your parallax to display. This method is especially usefull if you are having trouble with full width, or you would like to build it into your theme.
 
->    <?php echo do_shortcode('[parallax-scroll id="#"]'); ?>
-    <?php echo do_shortcode('[parallax-scroll id="#"]'); ?>
+>    <<?php echo do_shortcode('[parallax-scroll id="#"]'); ?>>
+    <<?php echo do_shortcode('[parallax-scroll id="#"]'); ?>>
 
 Where # = parallax ID number
 
