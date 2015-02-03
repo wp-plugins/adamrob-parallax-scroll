@@ -25,19 +25,17 @@ Parallax Scroll; the easiest way to get a parallax scrolling background image fo
 * The Parallax Scroll admin page will display the shortcode required for all Parallax Scroll post types defined. Copy this shortcode, and paste it into any page or post.
 * Thats it!
 
-**Please note**
-
-	The parallax will size automatically to the width of your themes content area. If your theme's content area is not full width, then the parallax will not be full width. This is an issue with your theme and not the plugin.
-As a work around, I have added a full width option that will ignore the content area of your theme and resize to your themes post section. Again this may not work if your themes post section is not full width.
-If the plugin does not work as you would have hoped; please contact me and I can advise further.
-
 **New:**
 
-	You can now use parallax scroll in your themes, using PHP. Using this method, there is no need to add a shortcode to a page or post; just simply paste the following PHP code into your PHP page where you would like your parallax to display. This method is especially usefull if you are having trouble with full width, or you would like to build it into your theme.
+You can now use parallax scroll in your themes, using PHP. Using this method, there is no need to add a shortcode to a page or post; just simply paste the following PHP code into your PHP page where you would like your parallax to display. This method is especially usefull if you are having trouble with full width, or you would like to build it into your theme.
 
->    echo do_shortcode('[parallax-scroll id="#"]')
+	echo do_shortcode('[parallax-scroll id="#"]')
 
 *Where # = parallax ID number*
+
+**Please note**
+
+>	The parallax will size automatically to the width of your themes content area. If your theme's content area is not full width, then the parallax will not be full width. This is an issue with your theme and not the plugin. As a work around, I have added a full width option that will ignore the content area of your theme and resize to your themes post section. Again this may not work if your themes post section is not full width. If the plugin does not work as you would have hoped; please contact me and I can advise further.
 
 == Installation ==
 
