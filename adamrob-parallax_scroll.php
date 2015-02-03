@@ -3,7 +3,7 @@
 * Plugin Name: Parallax Scroll by Adamrob.co.uk
 * Plugin URI: http://www.adamrob.co.uk/parallax-scroll
 * Description: Easily create a page header or even a post with a parallax scrolling background image, with just a shortcode! Visit adamrob.co.uk for more information and support.
-* Version: 1.1
+* Version: 1.2
 * Author: adamrob
 * Author URI: http://www.adamrob.co.uk
 * License: A "Slug" license name e.g. GPL12
@@ -53,6 +53,9 @@
 ** V1.1 - 10JAN2015 - Fixed full width issue where if more than one parallax
 **                      was in a single post it would fail to size correctly
 **
+** V1.2 - 2FEB2015 - Added Help Menus
+**                      Added image size property
+**
 ** Main Plugin Call
 ********************************/
 
@@ -78,6 +81,7 @@ add_action('wp_enqueue_scripts', 'adamrob_parallax_scroll_scripts');
 require(PARALLAX_PATH . 'includes/adamrob-parralax-post-ops.php');
 require(PARALLAX_PATH . 'includes/adamrob-parralax-post-type.php');
 require(PARALLAX_PATH . 'includes/adamrob-parralax-shortcode.php');
+require(PARALLAX_PATH . 'includes/adamrob-parralax-help.php');
 
 
 

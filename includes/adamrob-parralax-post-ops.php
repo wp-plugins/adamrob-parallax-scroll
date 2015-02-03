@@ -11,7 +11,8 @@
 /*
     V0.2 - 7OCT2014 - Added Header Style Parameter
     V0.4 - 31OCT2014 - Added 2 Mobile Turn Off Parameters. Added full width option
-    V1.0 - 13JAN2015 - Added parallax image size option
+    V1.2 - 3FEB2015 - Added parallax image size option
+                        Removed blurb text
 */
 
 
@@ -37,12 +38,12 @@
             'id'    => $prefix.'height',
             'type'  => 'number'
         ),
-        /*array(
+        array(
             'label'=> 'Parallax Image Size',
             'desc'  => 'The parallax image size will be scaled based on this value. Specify the width in pixels. Set to 0 to auto set the size of the image (recommended)',
             'id'    => $prefix.'pheight',
             'type'  => 'number'
-        ),*/
+        ),
         array(
             'label'=> 'Horizontal Position',
             'desc'  => 'The horizontal position of the header on the parallax background.',
@@ -120,18 +121,15 @@
 
         //Display message first
         echo '<tr/><td colspan="2">';
-        echo '<p style="text-align:center;">';
+        echo '<p style="">';
         echo '<strong>Parallax Scroll by adamrob.co.uk</strong>';
         echo '<br/>Parallax scroll wil use the information in this post to build a parallax element on your site. This element can then be used in any page/post on your site by using a shortcode.';
-        echo '<br/>Please note, the parallax is always full width. It will be full width of the content area of your theme. If your theme is not full width, you can try and use the full width option below. This may or may not achieve full width for your theme.';
         echo '</p>';
-        echo '<br/><br/>To use Parallax Scroll simply follow these steps:';
-        echo '<ol type="1"><li>Enter a post title. This will be the main title displayed over the parallax background.</li>';
-        echo '<li>Optionally add some content to your post. If no content is specified then only the post header will display.</li>';
-        echo '<li>Add a feature image to your post. This image will be your parallax background. Parallax Scroll will not work without a feature image.</li>';
-        echo '<li>Fill out the optional parameters below to further customise your parallax.</li>';
-        echo '<li>Find the parallax shortcode which is listed on the main Parallax Scroll listing page, and paste it into a page/post of your choosing</li></ol>';
-        echo 'For further help or support, please visit www.adamrob.co.uk';
+        echo '<p style="">';
+        echo "<br/><b>What's New?</b><br/>";
+        echo "> All help text has now been moved to the help menus. Try clicking the help link in the top right hand corner!";
+        echo '</p>';
+        echo '<hr>';
         echo '</td></tr>';
 
         foreach ($custom_meta_fields as $field) {

@@ -3,7 +3,7 @@ Contributors: adamrob
 Tags: parallax, scroll, image, header, adamrob
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,7 @@ Please note the parallax will size automatically to the width of your themes con
 As a work around, I have added a full width option that will ignore the content area of your theme and resize to your themes post section. Again this may not work if your themes post section is not full width.
 If the plugin does not work as you would have hoped; please contact me and I can advise further.
 
-** NEW **
+New:
 You can now use parallax scroll in your themes, using PHP. Using this method, there is no need to add a shortcode to a page or post; just simply paste the following PHP code into your PHP page where you would like your parallax to display. This method is especially usefull if you are having trouble with full width, or you would like to build it into your theme.
 
 >    echo do_shortcode('[parallax-scroll id="#"]')
@@ -89,6 +89,10 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 = 1.1 =
 * Fixed - Fixed full width issue where if more than one parallax was used in a single post/page they would not size correctly
 
+= 1.2 =
+* Added - New help menu's
+* Added - Parallax image size option
+
 
 == Upgrade Notice ==
 
@@ -104,3 +108,6 @@ PLEASE NOTE: Make a backup of parallax scroll plugin before upgrading. The plugi
 
 = 1.1 =
 Fixed full width issue where if more than one parallax was used in a single post/page they would not size correctly.
+
+= 1.2 =
+Added help menu's and an option to specify parallax image size.

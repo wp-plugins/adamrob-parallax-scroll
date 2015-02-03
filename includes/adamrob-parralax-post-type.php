@@ -39,7 +39,7 @@ function register_cpt_parallax_scroll() {
         'public' => false, //cam this be false??
         'show_ui' => true,
         'show_in_menu' => true,
-        'menu_position' => 20,
+        'menu_position' => 25,
         'menu_icon' => 'dashicons-slides',
         'show_in_nav_menus' => false,
         'publicly_queryable' => false,
@@ -53,7 +53,6 @@ function register_cpt_parallax_scroll() {
  
     register_post_type( PARALLAX_POSTTYPE, $args );
 }
- 
 add_action( 'init', 'register_cpt_parallax_scroll' );
 
 
@@ -61,10 +60,6 @@ add_action( 'init', 'register_cpt_parallax_scroll' );
 /***
 ** ADD CUSTOM COLUMN TO POST TYPE
 ***/
-
-// Add filter to add a column displaying shortcode
-add_filter('manage_edit-'.PARALLAX_POSTTYPE.'_columns', 'addnew_cols_parallax_scroll');
-
 function addnew_cols_parallax_scroll($parallax_scroll_columns) {
     //Create the columns required in admin
     $new_columns['cb'] = '<input type="checkbox" />';
@@ -75,15 +70,12 @@ function addnew_cols_parallax_scroll($parallax_scroll_columns) {
  
     return $new_columns;
 }
+add_filter('manage_edit-'.PARALLAX_POSTTYPE.'_columns', 'addnew_cols_parallax_scroll');
 
 
 /***
 ** ADD CUSTOM COLUMN DATA
-***/
-
-// Add to admin_init function
-add_action('manage_'.PARALLAX_POSTTYPE.'_posts_custom_column', 'manage_parallax_scroll_columns', 10, 2);
- 
+***/ 
 function manage_parallax_scroll_columns($column_name, $id) {
     global $wpdb;
     switch ($column_name) {
@@ -95,6 +87,7 @@ function manage_parallax_scroll_columns($column_name, $id) {
         break;
     } // end switch
 }
+add_action('manage_'.PARALLAX_POSTTYPE.'_posts_custom_column', 'manage_parallax_scroll_columns', 10, 2);
 
 
 ?>
