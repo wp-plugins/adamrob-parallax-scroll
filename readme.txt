@@ -3,7 +3,7 @@ Contributors: adamrob
 Tags: parallax, scroll, image, header, adamrob
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -96,6 +96,9 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 * Added - New help menu's
 * Added - Parallax image size option
 
+= 1.3 =
+* Fixed - Menu Position Bug
+
 
 == Upgrade Notice ==
 
@@ -114,3 +117,6 @@ Fixed full width issue where if more than one parallax was used in a single post
 
 = 1.2 =
 Added help menu's and an option to specify parallax image size.
+
+= 1.3 =
+Fixed Menu Position Bug

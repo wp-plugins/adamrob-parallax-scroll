@@ -39,7 +39,7 @@ function register_cpt_parallax_scroll() {
         'public' => false, //cam this be false??
         'show_ui' => true,
         'show_in_menu' => true,
-        'menu_position' => 25,
+        'menu_position' => NULL, //default pos below comments
         'menu_icon' => 'dashicons-slides',
         'show_in_nav_menus' => false,
         'publicly_queryable' => false,
