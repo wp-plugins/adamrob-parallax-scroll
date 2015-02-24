@@ -19,6 +19,9 @@ function parallaxscroll_help_get_whatsnew(){
     $text.="<ul>";
     $text.="<li>New help menus! To help improve the look and feel of the plugin-in, help text has now been moved to the help menus</li>";
     $text.="<li>New image size property for users who want more control on the size of their parallax image</li>";
+    $text.="<li>Fixed - When a user visits on a mobile device, the image will no longer appear too large.</li>";
+    $text.="<li>New image size property for mobile devices. Specify a size when a user visits on a mobile device</li>";
+    $text.="<li>More DIVS have been given IDs; so you can customise the CSS better.</li>";
     $text.="</ul>";
     $text.="Please visit <a href='http://www.adamrob.co.uk/parallax-scroll' target='blank'> adamrob.co.uk</a> for more information and support.";
     $text.="</p>";
@@ -44,8 +47,9 @@ function parallaxscroll_help_get_creating(){
     $text.="<li><b>Vertical Position</b><br/>The vertical position of the header on the parallax background. This setting is ignored if post content is specified.</li>";
     $text.="<li><b>Header Style</b><i>optional</i><br/>Enter the inline CSS style required for the header eg. font-weight: bold; font-size: large;<br>If you would like to hide the header, type: display: none; </li>";
     $text.="<li><b>Full Width</b><i>optional</i><br/>Display the parallax across the full width of the page. This is a work around to get a full width parallax if its not already. This may not work on some themes. Please see the note below for more information.</li>";
-    $text.="<li><b>Disable Image On Mobile</b><i>optional</i><br/>Parallax Scroll can only render the background image on mobile devices with no animation. Select this option if you would rather the background image not display at all on mobile devices.</li>";
-    $text.="<li><b>Disable Parallax On Mobile</b><i>optional</i><br/>Parallax Scroll can only render the background image on mobile devices with no animation. Select this option if you would rather not show the entire parallax (including content) when on a mobile device.</li>";
+    $text.="<li><b>Mobile: Disable Image</b><i>optional</i><br/>Parallax Scroll can only render the background image on mobile devices with no animation. Select this option if you would rather the background image not display at all on mobile devices.</li>";
+    $text.="<li><b>Mobile: Disable Parallax</b><i>optional</i><br/>Parallax Scroll can only render the background image on mobile devices with no animation. Select this option if you would rather not show the entire parallax (including content) when on a mobile device.</li>";
+    $text.="<li><b>Mobile: Image Size</b><i>optional</i><br/>Set a size here to scale the image size when on a mobile device. Specify the width in pixels. Set to 0 to auto set the size of the image.</li>";
     $text.="</ul>";
     $text.="<b>Note:</b> The parallax is always full width. It will size to the full width of your post. If this doesnt give you the effect required, selecting the full width option will resize the parallax to the content area of the page/post. If this still does not give the required effect, its because your theme's content area is not full width. This is not a fault of the plugin, but your theme.";
     $text.="</p>";

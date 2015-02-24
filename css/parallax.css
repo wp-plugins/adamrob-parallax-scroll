@@ -17,18 +17,10 @@
 /* ============================================================
   SECTIONS
 ============================================================ */
-section.adamrob_pmodule:last-child {
-  /*margin-bottom: 0;*/
-}
 
-section.adamrob_pmodule p:last-child {
-  /*margin-bottom: 0;*/
-}
 
-section.adamrob_pmodule.content {
-  /*padding: 40px 0;*/
-}
-section.adamrob_pmodule.adamrob_parallax {
+
+section.adamrob_parallax {
   /*height: 600px; Set in PHP */
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -39,26 +31,6 @@ section.adamrob_pmodule.adamrob_parallax {
 
 
 
-section.adamrob_pmodule.parallax-1 {
-	/*This is set in PHP */
-	/*background-image: url("http://localhost/wp-content/uploads/2015/01/Desert.jpg");*/
-}
-
-
-@media all and (min-width: 600px) {
-  /* NOT USED. USER CAN DEFINE OWN STYLES
-  section.adamrob_pmodule p {
-    font-size: 20px;
-  }
-  */
-}
-@media all and (min-width: 960px) {
-	/* NOT USED. USER CAN DEFINE OWN STYLES
-  	section.adamrob_pmodule.adamrob_parallax h1 {
-    	font-size: 50px;
-  	}
-	*/
-}
 
 /* ============================================================
   FULL WIDTH CLASS

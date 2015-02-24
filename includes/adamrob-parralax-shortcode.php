@@ -13,6 +13,7 @@
     V0.4 - 31OCT2014 - Added disable on mobile parameters. Added full width option
     V1.0 - 13JAN2015 - Removed parallax.js and now using pure CSS
     v1.1 - 20JAN2015 - Fixed full width issue where more than one parallax used on one post
+    V1.4 - 24FEB2015 - Added mobile sizing options
 */
 
 /***
@@ -96,6 +97,7 @@ function register_sc_parallax_scroll( $atts ) {
 
             //Get parallaz image size
             $psize = absint(get_post_meta(get_the_id(), 'parallax_meta_pheight', true));
+            $mobpsize = absint(get_post_meta(get_the_id(), 'parallax_meta_pheightmob', true));
 
             //Get parallax disable options
             $disableParImg=esc_attr(get_post_meta(get_the_id(), 'parallax_meta_DisableParImg', true));
@@ -168,10 +170,16 @@ function register_sc_parallax_scroll( $atts ) {
 
             //build style tag for background size
             $ParallaxSizeStyle='background-size: cover;';
-            if ($psize>0){
-                //Only show parallax if not on mobile.
-                //or on a mobile and user wants it
+            if (wp_is_mobile()==FALSE && $psize>0){
+                //if user not on mobile and wants to change the size
                 $ParallaxSizeStyle='background-size: '.$psize.'px;';
+            }elseif(wp_is_mobile()&&isset($mobpsize)&&$mobpsize==0){
+                //User is on mobile and wants to auto size
+                //$ParallaxSizeStyle='background-size: 100% 100%;';
+                $ParallaxSizeStyle='background-size: cover;';
+            }elseif(wp_is_mobile()&&isset($mobpsize)&&$mobpsize>0){
+                //User is on mobile and wants to use a different size
+                $ParallaxSizeStyle='background-size: '.$mobpsize.'px;background-repeat: no-repeat;';
             }
 
             //Give the entire plugin a container if we are full width
@@ -181,8 +189,17 @@ function register_sc_parallax_scroll( $atts ) {
             };
             
             //Build the parallax container
-            $output .= '<section id="parallax_'.$postid.'" class="adamrob_pmodule adamrob_parallax parallax-1 '.$parallaxFWStyleClass.'" style="'.$parallaxStyle.$ParallaxImgStyle.$ParallaxSizeStyle.'">';
-            $output .= '<div class="adamrob_pcontainer" style="'.$parallaxStyle.'">';
+            if(wp_is_mobile()&&isset($mobpsize)){
+                //Display static image
+                $output .= '<section id="parallax_'.$postid.'" class="'.$parallaxFWStyleClass.'" style="'.$parallaxStyle.$ParallaxImgStyle.$ParallaxSizeStyle.'">';
+            }else{
+                //display parallax image
+                $output .= '<section id="parallax_'.$postid.'" class="adamrob_parallax '.$parallaxFWStyleClass.'" style="'.$parallaxStyle.$ParallaxImgStyle.$ParallaxSizeStyle.'">';
+            }
+            
+
+
+            $output .= '<div id="parallax_'.$postid.'_content" class="adamrob_pcontainer" style="'.$parallaxStyle.'">';
 
             //Build the content if applicable
             if ($theContent==""){

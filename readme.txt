@@ -2,8 +2,8 @@
 Contributors: adamrob
 Tags: parallax, scroll, image, header, adamrob
 Requires at least: 4.0
-Tested up to: 4.1
-Stable tag: 1.3
+Tested up to: 4.1.1
+Stable tag: 1.4
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -99,6 +99,11 @@ Please visit [adamrob.co.uk](http://adamrob.co.uk/parallax-scroll "my website") 
 = 1.3 =
 * Fixed - Menu Position Bug
 
+= 1.4 =
+* Fixed - Images should appear better on mobile devices
+* Added - Image size option just for mobile devices
+* Added - Additional Div IDs
+
 
 == Upgrade Notice ==
 
@@ -120,3 +125,6 @@ Added help menu's and an option to specify parallax image size.
 
 = 1.3 =
 Fixed Menu Position Bug
+
+= 1.4 =
+Images should appear better on mobile devices plus Image size option just for mobile devices.

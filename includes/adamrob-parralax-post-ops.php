@@ -13,6 +13,7 @@
     V0.4 - 31OCT2014 - Added 2 Mobile Turn Off Parameters. Added full width option
     V1.2 - 3FEB2015 - Added parallax image size option
                         Removed blurb text
+    V1.4 - 24FEB2015 - Added mobile size option
 */
 
 
@@ -97,16 +98,22 @@
             'type'  => 'checkbox'
         ),
         array(
-            'label'=> 'Disable Parallax Image On Mobile Devices',
-            'desc'  => 'Parallax Scroll will only render the background image on mobile devices with no parallax animation. Select this option if you would rather the background image not display at all on mobile devices.',
+            'label'=> 'Mobile: Disable Parallax Image',
+            'desc'  => 'Select this option if you would rather the background image not display at all on mobile devices.',
             'id'    => $prefix.'DisableParImg',
             'type'  => 'checkbox'
         ),
         array(
-            'label'=> 'Disable Entire Parallax On Mobile Devices',
-            'desc'  => 'Parallax Scroll will only render the background image on mobile devices with no parallax animation. Select this option if you would rather not display any of the parallax content when on mobile device.',
+            'label'=> 'Mobile: Disable Entire Parallax',
+            'desc'  => 'Select this option if you would rather not display any of the parallax content when on mobile device.',
             'id'    => $prefix.'DisableParallax',
             'type'  => 'checkbox'
+        ),
+        array(
+            'label'=> 'Mobile: Image Size',
+            'desc'  => 'Set a size here to scale the image size when on a mobile device. Specify the width in pixels. Set to 0 to auto set the size of the image.',
+            'id'    => $prefix.'pheightmob',
+            'type'  => 'number'
         )
     );
 
